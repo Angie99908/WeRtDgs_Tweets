@@ -1,2 +1,2 @@
 # WeRtDgs_Tweets
-This is the initial code for the WeRateDogs Twitter data wrangling project.  I am having trouble with the glob code.
+This repository contains the code for the WeRateDogs Twitter data wrangling project. There is a report 'wrangle_report.pdf' which explains my experiences wrangling data for this project.  There is also a file 'act_report.pdf' which shares my observations from analyzing this data.
