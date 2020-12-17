@@ -13141,7 +13141,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># I used the Mentor Help section for the .txt Twitter file.  </span>
@@ -13164,11 +13164,11 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check import of &#39;twitter-archive-enhanced&#39;</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -13181,7 +13181,7 @@ div#notebook {
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[36]:</div>
+    <div class="prompt output_prompt">Out[2]:</div>
 
 
 
@@ -13284,6 +13284,46 @@ div#notebook {
       <td>None</td>
       <td>None</td>
     </tr>
+    <tr>
+      <th>3</th>
+      <td>891689557279858688</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-07-30 15:58:51 +0000</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Darla. She commenced a snooze mid meal...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>https://twitter.com/dog_rates/status/891689557...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Darla</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>891327558926688256</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2017-07-29 16:00:24 +0000</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Franklin. He would like you to stop ca...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>https://twitter.com/dog_rates/status/891327558...</td>
+      <td>12</td>
+      <td>10</td>
+      <td>Franklin</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
   </tbody>
 </table>
 </div>
@@ -13297,7 +13337,350 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[3]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tweet_id</th>
+      <th>in_reply_to_status_id</th>
+      <th>in_reply_to_user_id</th>
+      <th>retweeted_status_id</th>
+      <th>retweeted_status_user_id</th>
+      <th>rating_numerator</th>
+      <th>rating_denominator</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>2.356000e+03</td>
+      <td>7.800000e+01</td>
+      <td>7.800000e+01</td>
+      <td>1.810000e+02</td>
+      <td>1.810000e+02</td>
+      <td>2356.000000</td>
+      <td>2356.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>7.427716e+17</td>
+      <td>7.455079e+17</td>
+      <td>2.014171e+16</td>
+      <td>7.720400e+17</td>
+      <td>1.241698e+16</td>
+      <td>13.126486</td>
+      <td>10.455433</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>6.856705e+16</td>
+      <td>7.582492e+16</td>
+      <td>1.252797e+17</td>
+      <td>6.236928e+16</td>
+      <td>9.599254e+16</td>
+      <td>45.876648</td>
+      <td>6.745237</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>6.660209e+17</td>
+      <td>6.658147e+17</td>
+      <td>1.185634e+07</td>
+      <td>6.661041e+17</td>
+      <td>7.832140e+05</td>
+      <td>0.000000</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>6.783989e+17</td>
+      <td>6.757419e+17</td>
+      <td>3.086374e+08</td>
+      <td>7.186315e+17</td>
+      <td>4.196984e+09</td>
+      <td>10.000000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>7.196279e+17</td>
+      <td>7.038708e+17</td>
+      <td>4.196984e+09</td>
+      <td>7.804657e+17</td>
+      <td>4.196984e+09</td>
+      <td>11.000000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>7.993373e+17</td>
+      <td>8.257804e+17</td>
+      <td>4.196984e+09</td>
+      <td>8.203146e+17</td>
+      <td>4.196984e+09</td>
+      <td>12.000000</td>
+      <td>10.000000</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>8.924206e+17</td>
+      <td>8.862664e+17</td>
+      <td>8.405479e+17</td>
+      <td>8.874740e+17</td>
+      <td>7.874618e+17</td>
+      <td>1776.000000</td>
+      <td>170.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Show duplicated tweet id&#39;s in &#39;twitter-archive-enhanced&#39;</span>
+<span class="n">df_dup_rows</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">duplicated</span><span class="p">([</span><span class="s1">&#39;tweet_id&#39;</span><span class="p">])]</span>
+<span class="n">df_dup_rows</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[4]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tweet_id</th>
+      <th>in_reply_to_status_id</th>
+      <th>in_reply_to_user_id</th>
+      <th>timestamp</th>
+      <th>source</th>
+      <th>text</th>
+      <th>retweeted_status_id</th>
+      <th>retweeted_status_user_id</th>
+      <th>retweeted_status_timestamp</th>
+      <th>expanded_urls</th>
+      <th>rating_numerator</th>
+      <th>rating_denominator</th>
+      <th>name</th>
+      <th>doggo</th>
+      <th>floofer</th>
+      <th>pupper</th>
+      <th>puppo</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;rating_numerator&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tweet_id</span><span class="o">.</span><span class="n">max</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[5]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>892420643555336193</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[6]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1914    6.658147e+17
+2298    6.670655e+17
+1339    6.671522e+17
+149     6.671522e+17
+2169    6.678065e+17
+2189    6.689207e+17
+2149    6.693544e+17
+1464    6.706684e+17
+2038    6.715449e+17
+2036    6.715610e+17
+1885    6.717299e+17
+1940    6.737159e+17
+1905    6.744689e+17
+1895    6.747400e+17
+1892    6.747522e+17
+1882    6.747934e+17
+1866    6.749998e+17
+1452    6.753494e+17
+1852    6.754971e+17
+1842    6.757073e+17
+1844    6.758457e+17
+1819    6.765883e+17
+1774    6.780211e+17
+1689    6.813394e+17
+1663    6.827884e+17
+1634    6.842229e+17
+1630    6.844811e+17
+1618    6.849598e+17
+1605    6.855479e+17
+1598    6.860340e+17
+            ...     
+2326             NaN
+2327             NaN
+2328             NaN
+2329             NaN
+2330             NaN
+2331             NaN
+2332             NaN
+2333             NaN
+2334             NaN
+2335             NaN
+2336             NaN
+2337             NaN
+2338             NaN
+2339             NaN
+2340             NaN
+2341             NaN
+2342             NaN
+2343             NaN
+2344             NaN
+2345             NaN
+2346             NaN
+2347             NaN
+2348             NaN
+2349             NaN
+2350             NaN
+2351             NaN
+2352             NaN
+2353             NaN
+2354             NaN
+2355             NaN
+Name: in_reply_to_status_id, Length: 2356, dtype: float64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -13349,7 +13732,7 @@ memory usage: 313.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># import tsv file (I used this video or assistance: https://www.youtube.com/watch?v=cWkwV5c5I38)</span>
@@ -13369,10 +13752,10 @@ memory usage: 313.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url_df</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
 </pre></div>
 
     </div>
@@ -13385,7 +13768,57 @@ memory usage: 313.0+ KB
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[39]:</div>
+    <div class="prompt output_prompt">Out[9]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>tweet_id                        int64
+in_reply_to_status_id         float64
+in_reply_to_user_id           float64
+timestamp                      object
+source                         object
+text                           object
+retweeted_status_id           float64
+retweeted_status_user_id      float64
+retweeted_status_timestamp     object
+expanded_urls                  object
+rating_numerator                int64
+rating_denominator              int64
+name                           object
+doggo                          object
+floofer                        object
+pupper                         object
+puppo                          object
+dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">url_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[10]:</div>
 
 
 
@@ -13498,849 +13931,8 @@ memory usage: 313.0+ KB
       <td>0.154629</td>
       <td>True</td>
     </tr>
-    <tr>
-      <th>5</th>
-      <td>666050758794694657</td>
-      <td>https://pbs.twimg.com/media/CT5Jof1WUAEuVxN.jpg</td>
-      <td>1</td>
-      <td>Bernese_mountain_dog</td>
-      <td>0.651137</td>
-      <td>True</td>
-      <td>English_springer</td>
-      <td>0.263788</td>
-      <td>True</td>
-      <td>Greater_Swiss_Mountain_dog</td>
-      <td>0.016199</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>666051853826850816</td>
-      <td>https://pbs.twimg.com/media/CT5KoJ1WoAAJash.jpg</td>
-      <td>1</td>
-      <td>box_turtle</td>
-      <td>0.933012</td>
-      <td>False</td>
-      <td>mud_turtle</td>
-      <td>0.045885</td>
-      <td>False</td>
-      <td>terrapin</td>
-      <td>0.017885</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>666055525042405380</td>
-      <td>https://pbs.twimg.com/media/CT5N9tpXIAAifs1.jpg</td>
-      <td>1</td>
-      <td>chow</td>
-      <td>0.692517</td>
-      <td>True</td>
-      <td>Tibetan_mastiff</td>
-      <td>0.058279</td>
-      <td>True</td>
-      <td>fur_coat</td>
-      <td>0.054449</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>666057090499244032</td>
-      <td>https://pbs.twimg.com/media/CT5PY90WoAAQGLo.jpg</td>
-      <td>1</td>
-      <td>shopping_cart</td>
-      <td>0.962465</td>
-      <td>False</td>
-      <td>shopping_basket</td>
-      <td>0.014594</td>
-      <td>False</td>
-      <td>golden_retriever</td>
-      <td>0.007959</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>666058600524156928</td>
-      <td>https://pbs.twimg.com/media/CT5Qw94XAAA_2dP.jpg</td>
-      <td>1</td>
-      <td>miniature_poodle</td>
-      <td>0.201493</td>
-      <td>True</td>
-      <td>komondor</td>
-      <td>0.192305</td>
-      <td>True</td>
-      <td>soft-coated_wheaten_terrier</td>
-      <td>0.082086</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>666063827256086533</td>
-      <td>https://pbs.twimg.com/media/CT5Vg_wXIAAXfnj.jpg</td>
-      <td>1</td>
-      <td>golden_retriever</td>
-      <td>0.775930</td>
-      <td>True</td>
-      <td>Tibetan_mastiff</td>
-      <td>0.093718</td>
-      <td>True</td>
-      <td>Labrador_retriever</td>
-      <td>0.072427</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>666071193221509120</td>
-      <td>https://pbs.twimg.com/media/CT5cN_3WEAAlOoZ.jpg</td>
-      <td>1</td>
-      <td>Gordon_setter</td>
-      <td>0.503672</td>
-      <td>True</td>
-      <td>Yorkshire_terrier</td>
-      <td>0.174201</td>
-      <td>True</td>
-      <td>Pekinese</td>
-      <td>0.109454</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>12</th>
-      <td>666073100786774016</td>
-      <td>https://pbs.twimg.com/media/CT5d9DZXAAALcwe.jpg</td>
-      <td>1</td>
-      <td>Walker_hound</td>
-      <td>0.260857</td>
-      <td>True</td>
-      <td>English_foxhound</td>
-      <td>0.175382</td>
-      <td>True</td>
-      <td>Ibizan_hound</td>
-      <td>0.097471</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>13</th>
-      <td>666082916733198337</td>
-      <td>https://pbs.twimg.com/media/CT5m4VGWEAAtKc8.jpg</td>
-      <td>1</td>
-      <td>pug</td>
-      <td>0.489814</td>
-      <td>True</td>
-      <td>bull_mastiff</td>
-      <td>0.404722</td>
-      <td>True</td>
-      <td>French_bulldog</td>
-      <td>0.048960</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>14</th>
-      <td>666094000022159362</td>
-      <td>https://pbs.twimg.com/media/CT5w9gUW4AAsBNN.jpg</td>
-      <td>1</td>
-      <td>bloodhound</td>
-      <td>0.195217</td>
-      <td>True</td>
-      <td>German_shepherd</td>
-      <td>0.078260</td>
-      <td>True</td>
-      <td>malinois</td>
-      <td>0.075628</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>15</th>
-      <td>666099513787052032</td>
-      <td>https://pbs.twimg.com/media/CT51-JJUEAA6hV8.jpg</td>
-      <td>1</td>
-      <td>Lhasa</td>
-      <td>0.582330</td>
-      <td>True</td>
-      <td>Shih-Tzu</td>
-      <td>0.166192</td>
-      <td>True</td>
-      <td>Dandie_Dinmont</td>
-      <td>0.089688</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>16</th>
-      <td>666102155909144576</td>
-      <td>https://pbs.twimg.com/media/CT54YGiWUAEZnoK.jpg</td>
-      <td>1</td>
-      <td>English_setter</td>
-      <td>0.298617</td>
-      <td>True</td>
-      <td>Newfoundland</td>
-      <td>0.149842</td>
-      <td>True</td>
-      <td>borzoi</td>
-      <td>0.133649</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>17</th>
-      <td>666104133288665088</td>
-      <td>https://pbs.twimg.com/media/CT56LSZWoAAlJj2.jpg</td>
-      <td>1</td>
-      <td>hen</td>
-      <td>0.965932</td>
-      <td>False</td>
-      <td>cock</td>
-      <td>0.033919</td>
-      <td>False</td>
-      <td>partridge</td>
-      <td>0.000052</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>18</th>
-      <td>666268910803644416</td>
-      <td>https://pbs.twimg.com/media/CT8QCd1WEAADXws.jpg</td>
-      <td>1</td>
-      <td>desktop_computer</td>
-      <td>0.086502</td>
-      <td>False</td>
-      <td>desk</td>
-      <td>0.085547</td>
-      <td>False</td>
-      <td>bookcase</td>
-      <td>0.079480</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>19</th>
-      <td>666273097616637952</td>
-      <td>https://pbs.twimg.com/media/CT8T1mtUwAA3aqm.jpg</td>
-      <td>1</td>
-      <td>Italian_greyhound</td>
-      <td>0.176053</td>
-      <td>True</td>
-      <td>toy_terrier</td>
-      <td>0.111884</td>
-      <td>True</td>
-      <td>basenji</td>
-      <td>0.111152</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>20</th>
-      <td>666287406224695296</td>
-      <td>https://pbs.twimg.com/media/CT8g3BpUEAAuFjg.jpg</td>
-      <td>1</td>
-      <td>Maltese_dog</td>
-      <td>0.857531</td>
-      <td>True</td>
-      <td>toy_poodle</td>
-      <td>0.063064</td>
-      <td>True</td>
-      <td>miniature_poodle</td>
-      <td>0.025581</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>21</th>
-      <td>666293911632134144</td>
-      <td>https://pbs.twimg.com/media/CT8mx7KW4AEQu8N.jpg</td>
-      <td>1</td>
-      <td>three-toed_sloth</td>
-      <td>0.914671</td>
-      <td>False</td>
-      <td>otter</td>
-      <td>0.015250</td>
-      <td>False</td>
-      <td>great_grey_owl</td>
-      <td>0.013207</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>22</th>
-      <td>666337882303524864</td>
-      <td>https://pbs.twimg.com/media/CT9OwFIWEAMuRje.jpg</td>
-      <td>1</td>
-      <td>ox</td>
-      <td>0.416669</td>
-      <td>False</td>
-      <td>Newfoundland</td>
-      <td>0.278407</td>
-      <td>True</td>
-      <td>groenendael</td>
-      <td>0.102643</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>23</th>
-      <td>666345417576210432</td>
-      <td>https://pbs.twimg.com/media/CT9Vn7PWoAA_ZCM.jpg</td>
-      <td>1</td>
-      <td>golden_retriever</td>
-      <td>0.858744</td>
-      <td>True</td>
-      <td>Chesapeake_Bay_retriever</td>
-      <td>0.054787</td>
-      <td>True</td>
-      <td>Labrador_retriever</td>
-      <td>0.014241</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>24</th>
-      <td>666353288456101888</td>
-      <td>https://pbs.twimg.com/media/CT9cx0tUEAAhNN_.jpg</td>
-      <td>1</td>
-      <td>malamute</td>
-      <td>0.336874</td>
-      <td>True</td>
-      <td>Siberian_husky</td>
-      <td>0.147655</td>
-      <td>True</td>
-      <td>Eskimo_dog</td>
-      <td>0.093412</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>25</th>
-      <td>666362758909284353</td>
-      <td>https://pbs.twimg.com/media/CT9lXGsUcAAyUFt.jpg</td>
-      <td>1</td>
-      <td>guinea_pig</td>
-      <td>0.996496</td>
-      <td>False</td>
-      <td>skunk</td>
-      <td>0.002402</td>
-      <td>False</td>
-      <td>hamster</td>
-      <td>0.000461</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>26</th>
-      <td>666373753744588802</td>
-      <td>https://pbs.twimg.com/media/CT9vZEYWUAAlZ05.jpg</td>
-      <td>1</td>
-      <td>soft-coated_wheaten_terrier</td>
-      <td>0.326467</td>
-      <td>True</td>
-      <td>Afghan_hound</td>
-      <td>0.259551</td>
-      <td>True</td>
-      <td>briard</td>
-      <td>0.206803</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>27</th>
-      <td>666396247373291520</td>
-      <td>https://pbs.twimg.com/media/CT-D2ZHWIAA3gK1.jpg</td>
-      <td>1</td>
-      <td>Chihuahua</td>
-      <td>0.978108</td>
-      <td>True</td>
-      <td>toy_terrier</td>
-      <td>0.009397</td>
-      <td>True</td>
-      <td>papillon</td>
-      <td>0.004577</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>28</th>
-      <td>666407126856765440</td>
-      <td>https://pbs.twimg.com/media/CT-NvwmW4AAugGZ.jpg</td>
-      <td>1</td>
-      <td>black-and-tan_coonhound</td>
-      <td>0.529139</td>
-      <td>True</td>
-      <td>bloodhound</td>
-      <td>0.244220</td>
-      <td>True</td>
-      <td>flat-coated_retriever</td>
-      <td>0.173810</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>29</th>
-      <td>666411507551481857</td>
-      <td>https://pbs.twimg.com/media/CT-RugiWIAELEaq.jpg</td>
-      <td>1</td>
-      <td>coho</td>
-      <td>0.404640</td>
-      <td>False</td>
-      <td>barracouta</td>
-      <td>0.271485</td>
-      <td>False</td>
-      <td>gar</td>
-      <td>0.189945</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>2045</th>
-      <td>886366144734445568</td>
-      <td>https://pbs.twimg.com/media/DE0BTnQUwAApKEH.jpg</td>
-      <td>1</td>
-      <td>French_bulldog</td>
-      <td>0.999201</td>
-      <td>True</td>
-      <td>Chihuahua</td>
-      <td>0.000361</td>
-      <td>True</td>
-      <td>Boston_bull</td>
-      <td>0.000076</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2046</th>
-      <td>886680336477933568</td>
-      <td>https://pbs.twimg.com/media/DE4fEDzWAAAyHMM.jpg</td>
-      <td>1</td>
-      <td>convertible</td>
-      <td>0.738995</td>
-      <td>False</td>
-      <td>sports_car</td>
-      <td>0.139952</td>
-      <td>False</td>
-      <td>car_wheel</td>
-      <td>0.044173</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2047</th>
-      <td>886736880519319552</td>
-      <td>https://pbs.twimg.com/media/DE5Se8FXcAAJFx4.jpg</td>
-      <td>1</td>
-      <td>kuvasz</td>
-      <td>0.309706</td>
-      <td>True</td>
-      <td>Great_Pyrenees</td>
-      <td>0.186136</td>
-      <td>True</td>
-      <td>Dandie_Dinmont</td>
-      <td>0.086346</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2048</th>
-      <td>886983233522544640</td>
-      <td>https://pbs.twimg.com/media/DE8yicJW0AAAvBJ.jpg</td>
-      <td>2</td>
-      <td>Chihuahua</td>
-      <td>0.793469</td>
-      <td>True</td>
-      <td>toy_terrier</td>
-      <td>0.143528</td>
-      <td>True</td>
-      <td>can_opener</td>
-      <td>0.032253</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2049</th>
-      <td>887101392804085760</td>
-      <td>https://pbs.twimg.com/media/DE-eAq6UwAA-jaE.jpg</td>
-      <td>1</td>
-      <td>Samoyed</td>
-      <td>0.733942</td>
-      <td>True</td>
-      <td>Eskimo_dog</td>
-      <td>0.035029</td>
-      <td>True</td>
-      <td>Staffordshire_bullterrier</td>
-      <td>0.029705</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2050</th>
-      <td>887343217045368832</td>
-      <td>https://pbs.twimg.com/ext_tw_video_thumb/88734...</td>
-      <td>1</td>
-      <td>Mexican_hairless</td>
-      <td>0.330741</td>
-      <td>True</td>
-      <td>sea_lion</td>
-      <td>0.275645</td>
-      <td>False</td>
-      <td>Weimaraner</td>
-      <td>0.134203</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2051</th>
-      <td>887473957103951883</td>
-      <td>https://pbs.twimg.com/media/DFDw2tyUQAAAFke.jpg</td>
-      <td>2</td>
-      <td>Pembroke</td>
-      <td>0.809197</td>
-      <td>True</td>
-      <td>Rhodesian_ridgeback</td>
-      <td>0.054950</td>
-      <td>True</td>
-      <td>beagle</td>
-      <td>0.038915</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2052</th>
-      <td>887517139158093824</td>
-      <td>https://pbs.twimg.com/ext_tw_video_thumb/88751...</td>
-      <td>1</td>
-      <td>limousine</td>
-      <td>0.130432</td>
-      <td>False</td>
-      <td>tow_truck</td>
-      <td>0.029175</td>
-      <td>False</td>
-      <td>shopping_cart</td>
-      <td>0.026321</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2053</th>
-      <td>887705289381826560</td>
-      <td>https://pbs.twimg.com/media/DFHDQBbXgAEqY7t.jpg</td>
-      <td>1</td>
-      <td>basset</td>
-      <td>0.821664</td>
-      <td>True</td>
-      <td>redbone</td>
-      <td>0.087582</td>
-      <td>True</td>
-      <td>Weimaraner</td>
-      <td>0.026236</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2054</th>
-      <td>888078434458587136</td>
-      <td>https://pbs.twimg.com/media/DFMWn56WsAAkA7B.jpg</td>
-      <td>1</td>
-      <td>French_bulldog</td>
-      <td>0.995026</td>
-      <td>True</td>
-      <td>pug</td>
-      <td>0.000932</td>
-      <td>True</td>
-      <td>bull_mastiff</td>
-      <td>0.000903</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2055</th>
-      <td>888202515573088257</td>
-      <td>https://pbs.twimg.com/media/DFDw2tyUQAAAFke.jpg</td>
-      <td>2</td>
-      <td>Pembroke</td>
-      <td>0.809197</td>
-      <td>True</td>
-      <td>Rhodesian_ridgeback</td>
-      <td>0.054950</td>
-      <td>True</td>
-      <td>beagle</td>
-      <td>0.038915</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2056</th>
-      <td>888554962724278272</td>
-      <td>https://pbs.twimg.com/media/DFTH_O-UQAACu20.jpg</td>
-      <td>3</td>
-      <td>Siberian_husky</td>
-      <td>0.700377</td>
-      <td>True</td>
-      <td>Eskimo_dog</td>
-      <td>0.166511</td>
-      <td>True</td>
-      <td>malamute</td>
-      <td>0.111411</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2057</th>
-      <td>888804989199671297</td>
-      <td>https://pbs.twimg.com/media/DFWra-3VYAA2piG.jpg</td>
-      <td>1</td>
-      <td>golden_retriever</td>
-      <td>0.469760</td>
-      <td>True</td>
-      <td>Labrador_retriever</td>
-      <td>0.184172</td>
-      <td>True</td>
-      <td>English_setter</td>
-      <td>0.073482</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2058</th>
-      <td>888917238123831296</td>
-      <td>https://pbs.twimg.com/media/DFYRgsOUQAARGhO.jpg</td>
-      <td>1</td>
-      <td>golden_retriever</td>
-      <td>0.714719</td>
-      <td>True</td>
-      <td>Tibetan_mastiff</td>
-      <td>0.120184</td>
-      <td>True</td>
-      <td>Labrador_retriever</td>
-      <td>0.105506</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2059</th>
-      <td>889278841981685760</td>
-      <td>https://pbs.twimg.com/ext_tw_video_thumb/88927...</td>
-      <td>1</td>
-      <td>whippet</td>
-      <td>0.626152</td>
-      <td>True</td>
-      <td>borzoi</td>
-      <td>0.194742</td>
-      <td>True</td>
-      <td>Saluki</td>
-      <td>0.027351</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2060</th>
-      <td>889531135344209921</td>
-      <td>https://pbs.twimg.com/media/DFg_2PVW0AEHN3p.jpg</td>
-      <td>1</td>
-      <td>golden_retriever</td>
-      <td>0.953442</td>
-      <td>True</td>
-      <td>Labrador_retriever</td>
-      <td>0.013834</td>
-      <td>True</td>
-      <td>redbone</td>
-      <td>0.007958</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2061</th>
-      <td>889638837579907072</td>
-      <td>https://pbs.twimg.com/media/DFihzFfXsAYGDPR.jpg</td>
-      <td>1</td>
-      <td>French_bulldog</td>
-      <td>0.991650</td>
-      <td>True</td>
-      <td>boxer</td>
-      <td>0.002129</td>
-      <td>True</td>
-      <td>Staffordshire_bullterrier</td>
-      <td>0.001498</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2062</th>
-      <td>889665388333682689</td>
-      <td>https://pbs.twimg.com/media/DFi579UWsAAatzw.jpg</td>
-      <td>1</td>
-      <td>Pembroke</td>
-      <td>0.966327</td>
-      <td>True</td>
-      <td>Cardigan</td>
-      <td>0.027356</td>
-      <td>True</td>
-      <td>basenji</td>
-      <td>0.004633</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2063</th>
-      <td>889880896479866881</td>
-      <td>https://pbs.twimg.com/media/DFl99B1WsAITKsg.jpg</td>
-      <td>1</td>
-      <td>French_bulldog</td>
-      <td>0.377417</td>
-      <td>True</td>
-      <td>Labrador_retriever</td>
-      <td>0.151317</td>
-      <td>True</td>
-      <td>muzzle</td>
-      <td>0.082981</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2064</th>
-      <td>890006608113172480</td>
-      <td>https://pbs.twimg.com/media/DFnwSY4WAAAMliS.jpg</td>
-      <td>1</td>
-      <td>Samoyed</td>
-      <td>0.957979</td>
-      <td>True</td>
-      <td>Pomeranian</td>
-      <td>0.013884</td>
-      <td>True</td>
-      <td>chow</td>
-      <td>0.008167</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2065</th>
-      <td>890240255349198849</td>
-      <td>https://pbs.twimg.com/media/DFrEyVuW0AAO3t9.jpg</td>
-      <td>1</td>
-      <td>Pembroke</td>
-      <td>0.511319</td>
-      <td>True</td>
-      <td>Cardigan</td>
-      <td>0.451038</td>
-      <td>True</td>
-      <td>Chihuahua</td>
-      <td>0.029248</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2066</th>
-      <td>890609185150312448</td>
-      <td>https://pbs.twimg.com/media/DFwUU__XcAEpyXI.jpg</td>
-      <td>1</td>
-      <td>Irish_terrier</td>
-      <td>0.487574</td>
-      <td>True</td>
-      <td>Irish_setter</td>
-      <td>0.193054</td>
-      <td>True</td>
-      <td>Chesapeake_Bay_retriever</td>
-      <td>0.118184</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2067</th>
-      <td>890729181411237888</td>
-      <td>https://pbs.twimg.com/media/DFyBahAVwAAhUTd.jpg</td>
-      <td>2</td>
-      <td>Pomeranian</td>
-      <td>0.566142</td>
-      <td>True</td>
-      <td>Eskimo_dog</td>
-      <td>0.178406</td>
-      <td>True</td>
-      <td>Pembroke</td>
-      <td>0.076507</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2068</th>
-      <td>890971913173991426</td>
-      <td>https://pbs.twimg.com/media/DF1eOmZXUAALUcq.jpg</td>
-      <td>1</td>
-      <td>Appenzeller</td>
-      <td>0.341703</td>
-      <td>True</td>
-      <td>Border_collie</td>
-      <td>0.199287</td>
-      <td>True</td>
-      <td>ice_lolly</td>
-      <td>0.193548</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2069</th>
-      <td>891087950875897856</td>
-      <td>https://pbs.twimg.com/media/DF3HwyEWsAABqE6.jpg</td>
-      <td>1</td>
-      <td>Chesapeake_Bay_retriever</td>
-      <td>0.425595</td>
-      <td>True</td>
-      <td>Irish_terrier</td>
-      <td>0.116317</td>
-      <td>True</td>
-      <td>Indian_elephant</td>
-      <td>0.076902</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2070</th>
-      <td>891327558926688256</td>
-      <td>https://pbs.twimg.com/media/DF6hr6BUMAAzZgT.jpg</td>
-      <td>2</td>
-      <td>basset</td>
-      <td>0.555712</td>
-      <td>True</td>
-      <td>English_springer</td>
-      <td>0.225770</td>
-      <td>True</td>
-      <td>German_short-haired_pointer</td>
-      <td>0.175219</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2071</th>
-      <td>891689557279858688</td>
-      <td>https://pbs.twimg.com/media/DF_q7IAWsAEuuN8.jpg</td>
-      <td>1</td>
-      <td>paper_towel</td>
-      <td>0.170278</td>
-      <td>False</td>
-      <td>Labrador_retriever</td>
-      <td>0.168086</td>
-      <td>True</td>
-      <td>spatula</td>
-      <td>0.040836</td>
-      <td>False</td>
-    </tr>
-    <tr>
-      <th>2072</th>
-      <td>891815181378084864</td>
-      <td>https://pbs.twimg.com/media/DGBdLU1WsAANxJ9.jpg</td>
-      <td>1</td>
-      <td>Chihuahua</td>
-      <td>0.716012</td>
-      <td>True</td>
-      <td>malamute</td>
-      <td>0.078253</td>
-      <td>True</td>
-      <td>kelpie</td>
-      <td>0.031379</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2073</th>
-      <td>892177421306343426</td>
-      <td>https://pbs.twimg.com/media/DGGmoV4XsAAUL6n.jpg</td>
-      <td>1</td>
-      <td>Chihuahua</td>
-      <td>0.323581</td>
-      <td>True</td>
-      <td>Pekinese</td>
-      <td>0.090647</td>
-      <td>True</td>
-      <td>papillon</td>
-      <td>0.068957</td>
-      <td>True</td>
-    </tr>
-    <tr>
-      <th>2074</th>
-      <td>892420643555336193</td>
-      <td>https://pbs.twimg.com/media/DGKD1-bXoAAIAUK.jpg</td>
-      <td>1</td>
-      <td>orange</td>
-      <td>0.097049</td>
-      <td>False</td>
-      <td>bagel</td>
-      <td>0.085851</td>
-      <td>False</td>
-      <td>banana</td>
-      <td>0.076110</td>
-      <td>False</td>
-    </tr>
   </tbody>
 </table>
-<p>2075 rows × 12 columns</p>
 </div>
 </div>
 
@@ -14352,7 +13944,7 @@ memory usage: 313.0+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">url_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
@@ -14399,21 +13991,21 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[12]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Twitter denied me developer access. I used the Udacity Mentor Help section to complete this code</span>
+<span class="c1"># File was corrupted / unusable upon creation, ultimately downloaded from Udacity</span>
 
+<span class="c1">#consumer_key=&#39;X4Brx0KqE3BHMhfM7klRQzGb5&#39;</span>
+<span class="c1">#consumer_secret=&#39;8KBd6D3cjoNH02Iv3SQuyZDY62xxIjO6qFHI0C3msHBCslg4H9&#39;</span>
+<span class="c1">#access_token=&#39;901126343823327234-k6ITYAZnJsAwHqSpc8z4aTTfEhiM6bt&#39;</span>
+<span class="c1">#access_secret=&#39;GZaqeDQ3Vxy6GiNIhZavJIJ5QveLSkM4BbUHeaWWMmj9j&#39;</span>
 
-<span class="n">consumer_key</span><span class="o">=</span><span class="s1">&#39;X4Brx0KqE3BHMhfM7klRQzGb5&#39;</span>
-<span class="n">consumer_secret</span><span class="o">=</span><span class="s1">&#39;8KBd6D3cjoNH02Iv3SQuyZDY62xxIjO6qFHI0C3msHBCslg4H9&#39;</span>
-<span class="n">access_token</span><span class="o">=</span><span class="s1">&#39;901126343823327234-k6ITYAZnJsAwHqSpc8z4aTTfEhiM6bt&#39;</span>
-<span class="n">access_secret</span><span class="o">=</span><span class="s1">&#39;GZaqeDQ3Vxy6GiNIhZavJIJ5QveLSkM4BbUHeaWWMmj9j&#39;</span>
+<span class="c1">#auth = tweepy.OAuthHandler(consumer_key, consumer_secret)    </span>
+<span class="c1">#auth.set_access_token(access_token, access_secret)   </span>
 
-<span class="n">auth</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">OAuthHandler</span><span class="p">(</span><span class="n">consumer_key</span><span class="p">,</span> <span class="n">consumer_secret</span><span class="p">)</span>    
-<span class="n">auth</span><span class="o">.</span><span class="n">set_access_token</span><span class="p">(</span><span class="n">access_token</span><span class="p">,</span> <span class="n">access_secret</span><span class="p">)</span>   
-
-<span class="n">api</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">API</span><span class="p">(</span><span class="n">auth_handler</span><span class="o">=</span><span class="n">auth</span><span class="p">,</span> <span class="n">parser</span> <span class="o">=</span> <span class="n">tweepy</span><span class="o">.</span><span class="n">parsers</span><span class="o">.</span><span class="n">JSONParser</span><span class="p">(),</span> <span class="n">wait_on_rate_limit</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">wait_on_rate_limit_notify</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="c1">#api = tweepy.API(auth_handler=auth, parser = tweepy.parsers.JSONParser(), wait_on_rate_limit=True, wait_on_rate_limit_notify=True)</span>
 </pre></div>
 
     </div>
@@ -14423,23 +14015,450 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[44]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Opening the file after running </span>
 <span class="c1"># Save the retweet and favorite counts for each tweet ID in a new pandas DataFrame</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="k">import</span> <span class="n">pprint</span>
 
-<span class="n">df_tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id_str&#39;</span><span class="p">,</span> <span class="s1">&#39;retweet_count&#39;</span><span class="p">,</span> <span class="s1">&#39;favorite_count&#39;</span><span class="p">])</span>
-<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;json_tweets.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+<span class="n">tweets_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;tweet-json.txt&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">f</span><span class="p">:</span>
+        <span class="n">temp_dict</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="n">status</span>  <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-        <span class="n">tweet_id</span> <span class="o">=</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;id_str&#39;</span><span class="p">]</span>
-        <span class="n">retweet_count</span> <span class="o">=</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;retweet_count&#39;</span><span class="p">]</span>
-        <span class="n">favorite_count</span> <span class="o">=</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;favorite_count&#39;</span><span class="p">]</span>
-        <span class="n">df_tweets</span> <span class="o">=</span> <span class="n">df_tweets</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([[</span><span class="n">id_str</span><span class="p">,</span> <span class="n">retweet_count</span><span class="p">,</span> <span class="n">favorite_count</span><span class="p">]],</span>
-                                        <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id_str&#39;</span><span class="p">,</span> <span class="s1">&#39;retweet_count&#39;</span><span class="p">,</span> <span class="s1">&#39;favorite_count&#39;</span><span class="p">]))</span>
-<span class="n">df_tweets</span> <span class="o">=</span> <span class="n">df_tweets</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">temp_dict</span><span class="p">[</span><span class="s2">&quot;tweet_id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+        <span class="n">temp_dict</span><span class="p">[</span><span class="s2">&quot;retweet_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;retweet_count&#39;</span><span class="p">]</span>
+        <span class="n">temp_dict</span><span class="p">[</span><span class="s2">&quot;favorite_count&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">status</span><span class="p">[</span><span class="s1">&#39;favorite_count&#39;</span><span class="p">]</span>
+        <span class="n">tweets_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp_dict</span><span class="p">)</span>
+        
+<span class="n">df_tweets</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">tweets_list</span><span class="p">)</span>
 <span class="n">df_tweets</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[13]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>favorite_count</th>
+      <th>retweet_count</th>
+      <th>tweet_id</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>39467</td>
+      <td>8853</td>
+      <td>892420643555336193</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>33819</td>
+      <td>6514</td>
+      <td>892177421306343426</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>25461</td>
+      <td>4328</td>
+      <td>891815181378084864</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>42908</td>
+      <td>8964</td>
+      <td>891689557279858688</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>41048</td>
+      <td>9774</td>
+      <td>891327558926688256</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>20562</td>
+      <td>3261</td>
+      <td>891087950875897856</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>12041</td>
+      <td>2158</td>
+      <td>890971913173991426</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>56848</td>
+      <td>16716</td>
+      <td>890729181411237888</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>28226</td>
+      <td>4429</td>
+      <td>890609185150312448</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>32467</td>
+      <td>7711</td>
+      <td>890240255349198849</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>31166</td>
+      <td>7624</td>
+      <td>890006608113172480</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>28268</td>
+      <td>5156</td>
+      <td>889880896479866881</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>38818</td>
+      <td>8538</td>
+      <td>889665388333682689</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>27672</td>
+      <td>4735</td>
+      <td>889638837579907072</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>15359</td>
+      <td>2321</td>
+      <td>889531135344209921</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>25652</td>
+      <td>5637</td>
+      <td>889278841981685760</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>29611</td>
+      <td>4709</td>
+      <td>888917238123831296</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>26080</td>
+      <td>4559</td>
+      <td>888804989199671297</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>20290</td>
+      <td>3732</td>
+      <td>888554962724278272</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>22201</td>
+      <td>3653</td>
+      <td>888078434458587136</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>30779</td>
+      <td>5609</td>
+      <td>887705289381826560</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>46959</td>
+      <td>12082</td>
+      <td>887517139158093824</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>69871</td>
+      <td>18781</td>
+      <td>887473957103951883</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>34222</td>
+      <td>10737</td>
+      <td>887343217045368832</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>31061</td>
+      <td>6167</td>
+      <td>887101392804085760</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>35859</td>
+      <td>8084</td>
+      <td>886983233522544640</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>12306</td>
+      <td>3443</td>
+      <td>886736880519319552</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>22798</td>
+      <td>4610</td>
+      <td>886680336477933568</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>21524</td>
+      <td>3316</td>
+      <td>886366144734445568</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>117</td>
+      <td>4</td>
+      <td>886267009285017600</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>2324</th>
+      <td>459</td>
+      <td>339</td>
+      <td>666411507551481857</td>
+    </tr>
+    <tr>
+      <th>2325</th>
+      <td>113</td>
+      <td>44</td>
+      <td>666407126856765440</td>
+    </tr>
+    <tr>
+      <th>2326</th>
+      <td>172</td>
+      <td>92</td>
+      <td>666396247373291520</td>
+    </tr>
+    <tr>
+      <th>2327</th>
+      <td>194</td>
+      <td>100</td>
+      <td>666373753744588802</td>
+    </tr>
+    <tr>
+      <th>2328</th>
+      <td>804</td>
+      <td>595</td>
+      <td>666362758909284353</td>
+    </tr>
+    <tr>
+      <th>2329</th>
+      <td>229</td>
+      <td>77</td>
+      <td>666353288456101888</td>
+    </tr>
+    <tr>
+      <th>2330</th>
+      <td>307</td>
+      <td>146</td>
+      <td>666345417576210432</td>
+    </tr>
+    <tr>
+      <th>2331</th>
+      <td>204</td>
+      <td>96</td>
+      <td>666337882303524864</td>
+    </tr>
+    <tr>
+      <th>2332</th>
+      <td>522</td>
+      <td>368</td>
+      <td>666293911632134144</td>
+    </tr>
+    <tr>
+      <th>2333</th>
+      <td>152</td>
+      <td>71</td>
+      <td>666287406224695296</td>
+    </tr>
+    <tr>
+      <th>2334</th>
+      <td>184</td>
+      <td>82</td>
+      <td>666273097616637952</td>
+    </tr>
+    <tr>
+      <th>2335</th>
+      <td>108</td>
+      <td>37</td>
+      <td>666268910803644416</td>
+    </tr>
+    <tr>
+      <th>2336</th>
+      <td>14765</td>
+      <td>6871</td>
+      <td>666104133288665088</td>
+    </tr>
+    <tr>
+      <th>2337</th>
+      <td>81</td>
+      <td>16</td>
+      <td>666102155909144576</td>
+    </tr>
+    <tr>
+      <th>2338</th>
+      <td>164</td>
+      <td>73</td>
+      <td>666099513787052032</td>
+    </tr>
+    <tr>
+      <th>2339</th>
+      <td>169</td>
+      <td>79</td>
+      <td>666094000022159362</td>
+    </tr>
+    <tr>
+      <th>2340</th>
+      <td>121</td>
+      <td>47</td>
+      <td>666082916733198337</td>
+    </tr>
+    <tr>
+      <th>2341</th>
+      <td>335</td>
+      <td>174</td>
+      <td>666073100786774016</td>
+    </tr>
+    <tr>
+      <th>2342</th>
+      <td>154</td>
+      <td>67</td>
+      <td>666071193221509120</td>
+    </tr>
+    <tr>
+      <th>2343</th>
+      <td>496</td>
+      <td>232</td>
+      <td>666063827256086533</td>
+    </tr>
+    <tr>
+      <th>2344</th>
+      <td>115</td>
+      <td>61</td>
+      <td>666058600524156928</td>
+    </tr>
+    <tr>
+      <th>2345</th>
+      <td>304</td>
+      <td>146</td>
+      <td>666057090499244032</td>
+    </tr>
+    <tr>
+      <th>2346</th>
+      <td>448</td>
+      <td>261</td>
+      <td>666055525042405380</td>
+    </tr>
+    <tr>
+      <th>2347</th>
+      <td>1253</td>
+      <td>879</td>
+      <td>666051853826850816</td>
+    </tr>
+    <tr>
+      <th>2348</th>
+      <td>136</td>
+      <td>60</td>
+      <td>666050758794694657</td>
+    </tr>
+    <tr>
+      <th>2349</th>
+      <td>111</td>
+      <td>41</td>
+      <td>666049248165822465</td>
+    </tr>
+    <tr>
+      <th>2350</th>
+      <td>311</td>
+      <td>147</td>
+      <td>666044226329800704</td>
+    </tr>
+    <tr>
+      <th>2351</th>
+      <td>128</td>
+      <td>47</td>
+      <td>666033412701032449</td>
+    </tr>
+    <tr>
+      <th>2352</th>
+      <td>132</td>
+      <td>48</td>
+      <td>666029285002620928</td>
+    </tr>
+    <tr>
+      <th>2353</th>
+      <td>2535</td>
+      <td>532</td>
+      <td>666020888022790149</td>
+    </tr>
+  </tbody>
+</table>
+<p>2354 rows × 3 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_tweets</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14455,38 +14474,16 @@ memory usage: 152.1+ KB
     <div class="prompt"></div>
 
 
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">JSONDecodeError</span>                           Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-44-0cebbc39ffc0&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      4</span> <span class="ansi-green-fg">with</span> open<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;json_tweets.txt&#39;</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">as</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span>     <span class="ansi-green-fg">for</span> line <span class="ansi-green-fg">in</span> f<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">----&gt; 6</span><span class="ansi-red-fg">         </span>status  <span class="ansi-blue-fg">=</span> json<span class="ansi-blue-fg">.</span>loads<span class="ansi-blue-fg">(</span>line<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      7</span>         tweet_id <span class="ansi-blue-fg">=</span> status<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;id_str&#39;</span><span class="ansi-blue-fg">]</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span>         retweet_count <span class="ansi-blue-fg">=</span> status<span class="ansi-blue-fg">[</span><span class="ansi-blue-fg">&#39;retweet_count&#39;</span><span class="ansi-blue-fg">]</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.6/json/__init__.py</span> in <span class="ansi-cyan-fg">loads</span><span class="ansi-blue-fg">(s, encoding, cls, object_hook, parse_float, parse_int, parse_constant, object_pairs_hook, **kw)</span>
-<span class="ansi-green-intense-fg ansi-bold">    352</span>             parse_int <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">and</span> parse_float <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span> <span class="ansi-green-fg">and</span>
-<span class="ansi-green-intense-fg ansi-bold">    353</span>             parse_constant is None and object_pairs_hook is None and not kw):
-<span class="ansi-green-fg">--&gt; 354</span><span class="ansi-red-fg">         </span><span class="ansi-green-fg">return</span> _default_decoder<span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    355</span>     <span class="ansi-green-fg">if</span> cls <span class="ansi-green-fg">is</span> <span class="ansi-green-fg">None</span><span class="ansi-blue-fg">:</span>
-<span class="ansi-green-intense-fg ansi-bold">    356</span>         cls <span class="ansi-blue-fg">=</span> JSONDecoder
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.6/json/decoder.py</span> in <span class="ansi-cyan-fg">decode</span><span class="ansi-blue-fg">(self, s, _w)</span>
-<span class="ansi-green-intense-fg ansi-bold">    337</span> 
-<span class="ansi-green-intense-fg ansi-bold">    338</span>         &#34;&#34;&#34;
-<span class="ansi-green-fg">--&gt; 339</span><span class="ansi-red-fg">         </span>obj<span class="ansi-blue-fg">,</span> end <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>raw_decode<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">,</span> idx<span class="ansi-blue-fg">=</span>_w<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">,</span> <span class="ansi-cyan-fg">0</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>end<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    340</span>         end <span class="ansi-blue-fg">=</span> _w<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">,</span> end<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">.</span>end<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    341</span>         <span class="ansi-green-fg">if</span> end <span class="ansi-blue-fg">!=</span> len<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">)</span><span class="ansi-blue-fg">:</span>
-
-<span class="ansi-green-fg">/opt/conda/lib/python3.6/json/decoder.py</span> in <span class="ansi-cyan-fg">raw_decode</span><span class="ansi-blue-fg">(self, s, idx)</span>
-<span class="ansi-green-intense-fg ansi-bold">    355</span>             obj<span class="ansi-blue-fg">,</span> end <span class="ansi-blue-fg">=</span> self<span class="ansi-blue-fg">.</span>scan_once<span class="ansi-blue-fg">(</span>s<span class="ansi-blue-fg">,</span> idx<span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">    356</span>         <span class="ansi-green-fg">except</span> StopIteration <span class="ansi-green-fg">as</span> err<span class="ansi-blue-fg">:</span>
-<span class="ansi-green-fg">--&gt; 357</span><span class="ansi-red-fg">             </span><span class="ansi-green-fg">raise</span> JSONDecodeError<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#34;Expecting value&#34;</span><span class="ansi-blue-fg">,</span> s<span class="ansi-blue-fg">,</span> err<span class="ansi-blue-fg">.</span>value<span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">from</span> <span class="ansi-green-fg">None</span>
-<span class="ansi-green-intense-fg ansi-bold">    358</span>         <span class="ansi-green-fg">return</span> obj<span class="ansi-blue-fg">,</span> end
-
-<span class="ansi-red-fg">JSONDecodeError</span>: Expecting value: line 2 column 1 (char 2)</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2354 entries, 0 to 2353
+Data columns (total 3 columns):
+favorite_count    2354 non-null int64
+retweet_count     2354 non-null int64
+tweet_id          2354 non-null int64
+dtypes: int64(3)
+memory usage: 55.2 KB
+</pre>
 </div>
 </div>
 
@@ -14499,7 +14496,7 @@ memory usage: 152.1+ KB
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span>
 </pre></div>
 
     </div>
@@ -14522,91 +14519,13 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">glob</span>
-
-<span class="n">df_list</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">json_tweets</span> <span class="ow">in</span> <span class="n">glob</span><span class="o">.</span><span class="n">glob</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;json_tweets.txt&#39;</span><span class="p">):</span>
-    <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_tweets</span><span class="p">,</span> <span class="n">encoding</span><span class="o">=</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
-        <span class="nb">id</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-        <span class="n">retweet_count</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
-        <span class="n">favorite_count</span><span class="o">=</span><span class="n">file</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-        <span class="n">df_list</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s1">&#39;id&#39;</span> <span class="p">:</span><span class="nb">id</span> <span class="p">,</span> <span class="s1">&#39;retweet_count&#39;</span><span class="p">:</span> <span class="n">retweet_count</span><span class="p">,</span>   <span class="s1">&#39;favorite_count&#39;</span><span class="p">:</span> <span class="n">favorite_count</span><span class="p">})</span>
-        <span class="n">df3</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_list</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">,</span><span class="s1">&#39;retweet_count&#39;</span><span class="p">,</span><span class="s1">&#39;favorite_count&#39;</span><span class="p">])</span>
- 
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt output_prompt">Out[43]:</div>
-
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>[{&#39;id&#39;: &#39;[&#39;, &#39;retweet_count&#39;: &#39;&#39;, &#39;favorite_count&#39;: &#39;&#39;}]</pre>
-</div>
-
-</div>
-
-</div>
-</div>
-
-</div>
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-<div class="prompt input_prompt">In&nbsp;[16]:</div>
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Trying the json decode function</span>
-
-<span class="kn">import</span> <span class="nn">json</span>
-<span class="n">required_fields</span> <span class="o">=</span> <span class="p">[</span><span class="sa">u</span><span class="s1">&#39;id&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;created_at&#39;</span><span class="p">,</span> <span class="sa">u</span><span class="s1">&#39;retweet_count&#39;</span><span class="p">,</span>  <span class="sa">u</span><span class="s1">&#39;favorite_count&#39;</span><span class="p">]</span>
-
-
-<span class="n">data</span> <span class="o">=</span> <span class="n">df_list</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-<span class="n">json_data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">data</span><span class="p">)</span> <span class="c1"># this is dict</span>
-<span class="n">tweet</span> <span class="o">=</span> <span class="s1">&#39;::&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">i</span><span class="o">+</span><span class="s1">&#39;:&#39;</span><span class="o">+</span><span class="n">unicode</span><span class="p">(</span><span class="n">json_data</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">required_fields</span><span class="p">])</span>
-</pre></div>
-
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-
-<div class="output_area">
-
-    <div class="prompt"></div>
-
-
-<div class="output_subarea output_text output_error">
-<pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">AttributeError</span>                            Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-16-224c1e5ade9b&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span><span class="ansi-blue-fg">()</span>
-<span class="ansi-green-intense-fg ansi-bold">      5</span> 
-<span class="ansi-green-intense-fg ansi-bold">      6</span> 
-<span class="ansi-green-fg">----&gt; 7</span><span class="ansi-red-fg"> </span>data <span class="ansi-blue-fg">=</span> df_list<span class="ansi-blue-fg">.</span>decode<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">&#39;utf-8&#39;</span><span class="ansi-blue-fg">)</span>
-<span class="ansi-green-intense-fg ansi-bold">      8</span> json_data <span class="ansi-blue-fg">=</span> json<span class="ansi-blue-fg">.</span>loads<span class="ansi-blue-fg">(</span>data<span class="ansi-blue-fg">)</span> <span class="ansi-red-fg"># this is dict</span>
-<span class="ansi-green-intense-fg ansi-bold">      9</span> tweet <span class="ansi-blue-fg">=</span> <span class="ansi-blue-fg">&#39;::&#39;</span><span class="ansi-blue-fg">.</span>join<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">+</span><span class="ansi-blue-fg">&#39;:&#39;</span><span class="ansi-blue-fg">+</span>unicode<span class="ansi-blue-fg">(</span>json_data<span class="ansi-blue-fg">[</span>i<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span> <span class="ansi-green-fg">for</span> i <span class="ansi-green-fg">in</span> required_fields<span class="ansi-blue-fg">]</span><span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">AttributeError</span>: &#39;list&#39; object has no attribute &#39;decode&#39;</pre>
-</div>
-</div>
-
 </div>
 </div>
 
@@ -14624,21 +14543,30 @@ memory usage: 152.1+ KB
 <h3 id="Quality-Issues">Quality Issues<a class="anchor-link" href="#Quality-Issues">&#182;</a></h3><p>List at least 8 quality issues with the three data files:</p>
 <p>File 1 - Twitter-archive-enhanced.csv</p>
 <ul>
-<li>Several columns missing data ('in_reply_to_status_id', 'in_reply_to_user_id', 'retweeted_status_id', 'retweeted_status_user_id', 'retweeted_status_timestamp', 'expanded_urls')</li>
-<li>'timestamp' column is object, should be datetime </li>
+<li>1.1 - Several columns missing data ('in_reply_to_status_id', 'in_reply_to_user_id', 'retweeted_status_id', 'retweeted_status_user_id', 'retweeted_status_timestamp', 'expanded_urls') </li>
+<li>1.2 - 'timestamp' and 'retweeted_status_timestamp' columns are objects, should be datetime </li>
+<li>1.3 - Investigate rating outliers by creating a rating column where the numerator is divided by the denominator</li>
+<li>1.4 - Remove rows listed as replying to an original tweet as not being an original tweet and therefore should not be included in comparing ratings</li>
+<li>1.5 - Drop the rows containing all zeros</li>
 </ul>
 <p>File 2 - weratedogs-image-predictions.tsv</p>
 <ul>
-<li>For columns 'p1_dog', 'p2_dog', and 'p3_dog', remove rows where dog equals 'False'</li>
+<li>2.1 - Combine dog image columns into one column containing images with the highest accuracy ratings</li>
 </ul>
 <p>File 3 - json_tweets.txt</p>
 <h3 id="Tidiness-Issues">Tidiness Issues<a class="anchor-link" href="#Tidiness-Issues">&#182;</a></h3><p>List at least 2 tidiness issues with the three data files:</p>
 <p>File 1 - Twitter-archive-enhanced.csv</p>
 <ul>
-<li>'Source' column needs to be stripped down to one distinct variable</li>
+<li>'Source' column needs to be stripped down to one distinct variable in a column to be called 'device'; drop 'source' column and keep new 'device' column</li>
 </ul>
 <p>File 2 - weratedogs-image-predictions.tsv</p>
+<ul>
+<li>Add image data to 'Twitter-archive-enhanced' to add attributes for analysis</li>
+</ul>
 <p>File 3 - json_tweets.txt</p>
+<ul>
+<li>Join json_tweets with 'Twitter-archive-enhanced' to add attributes for analysis</li>
+</ul>
 
 </div>
 </div>
@@ -14652,10 +14580,13 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[15]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Create a copy of each file</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">url_img_df_clean</span> <span class="o">=</span> <span class="n">url_df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">df_tweets_clean</span> <span class="o">=</span> <span class="n">df_tweets</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14665,10 +14596,868 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[16]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Define the code to clean the files</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.1 - Convert &quot;NaN&quot; in &#39;in_reply_to_status_id&#39; and &#39;in_reply_to_user_id&#39; columns to zero, convert column type to int</span>
+<span class="c1"># https://stackoverflow.com/questions/38134012/pandas-dataframe-fillna-only-some-columns-in-place</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_user_id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+
+<span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2356 entries, 0 to 2355
+Data columns (total 17 columns):
+tweet_id                      2356 non-null int64
+in_reply_to_status_id         2356 non-null int64
+in_reply_to_user_id           2356 non-null int64
+timestamp                     2356 non-null object
+source                        2356 non-null object
+text                          2356 non-null object
+retweeted_status_id           2356 non-null int64
+retweeted_status_user_id      2356 non-null int64
+retweeted_status_timestamp    181 non-null object
+expanded_urls                 2297 non-null object
+rating_numerator              2356 non-null int64
+rating_denominator            2356 non-null int64
+name                          2356 non-null object
+doggo                         2356 non-null object
+floofer                       2356 non-null object
+pupper                        2356 non-null object
+puppo                         2356 non-null object
+dtypes: int64(7), object(10)
+memory usage: 313.0+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[17]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.1 cont. -  Taking a look at the values in the &#39;in_reply_to_status_id&#39; columns</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[17]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0                        0
+1553                     0
+1554                     0
+1555                     0
+1556                     0
+1557                     0
+1558                     0
+1552                     0
+1559                     0
+1561                     0
+1562                     0
+1563                     0
+1564                     0
+1565                     0
+1566                     0
+1560                     0
+1567                     0
+1551                     0
+1549                     0
+1535                     0
+1536                     0
+1537                     0
+1538                     0
+1539                     0
+1540                     0
+1550                     0
+1541                     0
+1543                     0
+1544                     0
+1545                     0
+               ...        
+857     763865174553964544
+843     766711819364888576
+701     772743019447607296
+611     797123751162839040
+576     800857954417262592
+570     801854330672447488
+513     811627233043480576
+498     813127251579564032
+427     821152592717697024
+409     823326389336244224
+387     826598365270007808
+346     831903044224835584
+342     832087547559997440
+313     835245984028504064
+291     838085539362402304
+290     838145498691194880
+274     840698300298862592
+234     847606175596138496
+228     848212111729840128
+218     850328818778820608
+184     855818117272018944
+189     855858535607001088
+188     855861584463351808
+186     856286004109553664
+179     857156678055342080
+148     863425645568774144
+113     870726202742493184
+64      879553827334172672
+55      881607037314052096
+30      886266357075128320
+Name: in_reply_to_status_id, Length: 2356, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[18]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.2 - Convert &#39;timestamp&#39; and &#39;retweeted_status_timestamp&#39; to datetime format https://www.codegrepper.com/code-examples/actionscript/convert+timestamp+to+datetime+python+dataframe</span>
+<span class="c1"># Define the code to clean the files</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="k">import</span> <span class="n">datetime</span>
+
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;timestamp&#39;</span><span class="p">])</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_timestamp&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_timestamp&#39;</span><span class="p">])</span>
+
+
+<span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 2356 entries, 0 to 2355
+Data columns (total 17 columns):
+tweet_id                      2356 non-null int64
+in_reply_to_status_id         2356 non-null int64
+in_reply_to_user_id           2356 non-null int64
+timestamp                     2356 non-null datetime64[ns]
+source                        2356 non-null object
+text                          2356 non-null object
+retweeted_status_id           2356 non-null int64
+retweeted_status_user_id      2356 non-null int64
+retweeted_status_timestamp    181 non-null datetime64[ns]
+expanded_urls                 2297 non-null object
+rating_numerator              2356 non-null int64
+rating_denominator            2356 non-null int64
+name                          2356 non-null object
+doggo                         2356 non-null object
+floofer                       2356 non-null object
+pupper                        2356 non-null object
+puppo                         2356 non-null object
+dtypes: datetime64[ns](2), int64(7), object(8)
+memory usage: 313.0+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.2. - Test to see if the code was successful</span>
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[19]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tweet_id</th>
+      <th>in_reply_to_status_id</th>
+      <th>in_reply_to_user_id</th>
+      <th>timestamp</th>
+      <th>source</th>
+      <th>text</th>
+      <th>retweeted_status_id</th>
+      <th>retweeted_status_user_id</th>
+      <th>retweeted_status_timestamp</th>
+      <th>expanded_urls</th>
+      <th>rating_numerator</th>
+      <th>rating_denominator</th>
+      <th>name</th>
+      <th>doggo</th>
+      <th>floofer</th>
+      <th>pupper</th>
+      <th>puppo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>892420643555336193</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-08-01 16:23:56</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Phineas. He's a mystical boy. Only eve...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/892420643...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Phineas</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>892177421306343426</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-08-01 00:17:27</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Tilly. She's just checking pup on you....</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/892177421...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Tilly</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>891815181378084864</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-07-31 00:18:03</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Archie. He is a rare Norwegian Pouncin...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/891815181...</td>
+      <td>12</td>
+      <td>10</td>
+      <td>Archie</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>891689557279858688</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-07-30 15:58:51</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Darla. She commenced a snooze mid meal...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/891689557...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Darla</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>891327558926688256</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-07-29 16:00:24</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Franklin. He would like you to stop ca...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/891327558...</td>
+      <td>12</td>
+      <td>10</td>
+      <td>Franklin</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.3 - Investigate rating outliers by creating a new rating column where the numerator is divided by the denominator</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;new_rating&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;rating_numerator&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;rating_denominator&#39;</span><span class="p">]</span>
+
+<span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[20]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tweet_id</th>
+      <th>in_reply_to_status_id</th>
+      <th>in_reply_to_user_id</th>
+      <th>timestamp</th>
+      <th>source</th>
+      <th>text</th>
+      <th>retweeted_status_id</th>
+      <th>retweeted_status_user_id</th>
+      <th>retweeted_status_timestamp</th>
+      <th>expanded_urls</th>
+      <th>rating_numerator</th>
+      <th>rating_denominator</th>
+      <th>name</th>
+      <th>doggo</th>
+      <th>floofer</th>
+      <th>pupper</th>
+      <th>puppo</th>
+      <th>new_rating</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>892420643555336193</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-08-01 16:23:56</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Phineas. He's a mystical boy. Only eve...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/892420643...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Phineas</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>892177421306343426</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-08-01 00:17:27</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Tilly. She's just checking pup on you....</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/892177421...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Tilly</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>1.3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>891815181378084864</td>
+      <td>0</td>
+      <td>0</td>
+      <td>2017-07-31 00:18:03</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Archie. He is a rare Norwegian Pouncin...</td>
+      <td>0</td>
+      <td>0</td>
+      <td>NaT</td>
+      <td>https://twitter.com/dog_rates/status/891815181...</td>
+      <td>12</td>
+      <td>10</td>
+      <td>Archie</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>None</td>
+      <td>1.2</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.4 - Remove rows listed as replying to an original tweet as not being an original tweet and therefore should not be included in comparing ratings</span>
+<span class="c1"># 1.4.1 - Remove retweet rows for column &#39;in_reply_to_status_id&#39;</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="n">df_archive_clean</span><span class="o">.</span><span class="n">in_reply_to_status_id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 2278 entries, 0 to 2355
+Data columns (total 18 columns):
+tweet_id                      2278 non-null int64
+in_reply_to_status_id         2278 non-null int64
+in_reply_to_user_id           2278 non-null int64
+timestamp                     2278 non-null datetime64[ns]
+source                        2278 non-null object
+text                          2278 non-null object
+retweeted_status_id           2278 non-null int64
+retweeted_status_user_id      2278 non-null int64
+retweeted_status_timestamp    181 non-null datetime64[ns]
+expanded_urls                 2274 non-null object
+rating_numerator              2278 non-null int64
+rating_denominator            2278 non-null int64
+name                          2278 non-null object
+doggo                         2278 non-null object
+floofer                       2278 non-null object
+pupper                        2278 non-null object
+puppo                         2278 non-null object
+new_rating                    2278 non-null float64
+dtypes: datetime64[ns](2), float64(1), int64(7), object(8)
+memory usage: 338.1+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.4.1 - Sum to ensure the column total is zero</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[22]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.4 - Remove rows listed as replying to an original tweet as not being an original tweet and therefore should not be included in comparing ratings</span>
+<span class="c1"># 1.4.2 - Remove retweet rows for column &#39;in_reply_to_user_id&#39;</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="n">df_archive_clean</span><span class="o">.</span><span class="n">in_reply_to_user_id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 2278 entries, 0 to 2355
+Data columns (total 18 columns):
+tweet_id                      2278 non-null int64
+in_reply_to_status_id         2278 non-null int64
+in_reply_to_user_id           2278 non-null int64
+timestamp                     2278 non-null datetime64[ns]
+source                        2278 non-null object
+text                          2278 non-null object
+retweeted_status_id           2278 non-null int64
+retweeted_status_user_id      2278 non-null int64
+retweeted_status_timestamp    181 non-null datetime64[ns]
+expanded_urls                 2274 non-null object
+rating_numerator              2278 non-null int64
+rating_denominator            2278 non-null int64
+name                          2278 non-null object
+doggo                         2278 non-null object
+floofer                       2278 non-null object
+pupper                        2278 non-null object
+puppo                         2278 non-null object
+new_rating                    2278 non-null float64
+dtypes: datetime64[ns](2), float64(1), int64(7), object(8)
+memory usage: 338.1+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.4.2 - Sum to ensure the column total is zero</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;in_reply_to_user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[24]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.4 - Remove rows listed as replying to an original tweet as not being an original tweet and therefore should not be included in comparing ratings</span>
+<span class="c1"># 1.4.3 - Remove retweet rows for column &#39;retweeted_status_id&#39;</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="p">[</span><span class="n">df_archive_clean</span><span class="o">.</span><span class="n">retweeted_status_id</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+
+<span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 2097 entries, 0 to 2355
+Data columns (total 18 columns):
+tweet_id                      2097 non-null int64
+in_reply_to_status_id         2097 non-null int64
+in_reply_to_user_id           2097 non-null int64
+timestamp                     2097 non-null datetime64[ns]
+source                        2097 non-null object
+text                          2097 non-null object
+retweeted_status_id           2097 non-null int64
+retweeted_status_user_id      2097 non-null int64
+retweeted_status_timestamp    0 non-null datetime64[ns]
+expanded_urls                 2094 non-null object
+rating_numerator              2097 non-null int64
+rating_denominator            2097 non-null int64
+name                          2097 non-null object
+doggo                         2097 non-null object
+floofer                       2097 non-null object
+pupper                        2097 non-null object
+puppo                         2097 non-null object
+new_rating                    2097 non-null float64
+dtypes: datetime64[ns](2), float64(1), int64(7), object(8)
+memory usage: 311.3+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.4.3 - Sum to ensure the column total is zero</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[26]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[27]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check to make sure &#39;retweeted_status_user_id&#39; total is zero</span>
+<span class="n">df_archive_clean</span><span class="p">[</span><span class="s1">&#39;retweeted_status_user_id&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[27]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[28]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.5 - Drop columns containing zeros and are unrelated to what we plan to analyze</span>
+<span class="c1"># 1.5.1 - Remove columns &#39;retweeted_status_id&#39;, &#39;retweeted_status_user_id&#39;, &#39;retweeted_status_timestamp&#39; https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;retweeted_status_user_id&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;retweeted_status_id&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;retweeted_status_timestamp&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14678,10 +15467,65 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Programmatically clean the files</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Programmatically clean the file - test the code to see if it was successful</span>
+
+<span class="n">df_archive_clean</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 2097 entries, 0 to 2355
+Data columns (total 15 columns):
+tweet_id                 2097 non-null int64
+in_reply_to_status_id    2097 non-null int64
+in_reply_to_user_id      2097 non-null int64
+timestamp                2097 non-null datetime64[ns]
+source                   2097 non-null object
+text                     2097 non-null object
+expanded_urls            2094 non-null object
+rating_numerator         2097 non-null int64
+rating_denominator       2097 non-null int64
+name                     2097 non-null object
+doggo                    2097 non-null object
+floofer                  2097 non-null object
+pupper                   2097 non-null object
+puppo                    2097 non-null object
+new_rating               2097 non-null float64
+dtypes: datetime64[ns](1), float64(1), int64(5), object(8)
+memory usage: 262.1+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1.5 - Drop columns containing zeros and are unrelated to what we plan to analyze</span>
+<span class="c1"># 1.5.2 - Remove columns &#39;retweeted_status_id&#39;, &#39;retweeted_status_user_id&#39;, &#39;retweeted_status_timestamp&#39; https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.drop.html</span>
+<span class="c1">#Define the code to clean the files</span>
+<span class="n">df_archive_clean</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;in_reply_to_status_id&#39;</span><span class="p">,</span> <span class="s1">&#39;in_reply_to_user_id&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14691,10 +15535,577 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Test the code to confirm changes</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">new_df_archive</span> <span class="o">=</span> <span class="n">df_archive_clean</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">new_df_archive</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 2097 entries, 0 to 2355
+Data columns (total 13 columns):
+tweet_id              2097 non-null int64
+timestamp             2097 non-null datetime64[ns]
+source                2097 non-null object
+text                  2097 non-null object
+expanded_urls         2094 non-null object
+rating_numerator      2097 non-null int64
+rating_denominator    2097 non-null int64
+name                  2097 non-null object
+doggo                 2097 non-null object
+floofer               2097 non-null object
+pupper                2097 non-null object
+puppo                 2097 non-null object
+new_rating            2097 non-null float64
+dtypes: datetime64[ns](1), float64(1), int64(3), object(8)
+memory usage: 229.4+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Tidiness">Tidiness<a class="anchor-link" href="#Tidiness">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># I am going to join the data and then strip the source column down to one variable</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.1 - Merge datasets &#39;df_archive_clean&#39; and &#39;df_tweets_clean&#39; on &#39;tweet_id&#39;</span>
+<span class="c1"># Define the code</span>
+<span class="n">tweets_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">new_df_archive</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">df_tweets_clean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[34]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.1 - Test the code</span>
+<span class="n">tweets_merged</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 2097 entries, 0 to 2096
+Data columns (total 15 columns):
+tweet_id              2097 non-null int64
+timestamp             2097 non-null datetime64[ns]
+source                2097 non-null object
+text                  2097 non-null object
+expanded_urls         2094 non-null object
+rating_numerator      2097 non-null int64
+rating_denominator    2097 non-null int64
+name                  2097 non-null object
+doggo                 2097 non-null object
+floofer               2097 non-null object
+pupper                2097 non-null object
+puppo                 2097 non-null object
+new_rating            2097 non-null float64
+favorite_count        2097 non-null int64
+retweet_count         2097 non-null int64
+dtypes: datetime64[ns](1), float64(1), int64(5), object(8)
+memory usage: 262.1+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[35]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.2 - Merge &#39;url_im_df_clean&#39; with the new &#39;tweets_merged&#39; dataframe</span>
+<span class="c1"># Define the code </span>
+<span class="n">df_tweets_merged</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">left</span><span class="o">=</span><span class="n">tweets_merged</span><span class="p">,</span> <span class="n">right</span><span class="o">=</span><span class="n">url_img_df_clean</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[36]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.2 - Test the code</span>
+<span class="n">df_tweets_merged</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 1971 entries, 0 to 1970
+Data columns (total 26 columns):
+tweet_id              1971 non-null int64
+timestamp             1971 non-null datetime64[ns]
+source                1971 non-null object
+text                  1971 non-null object
+expanded_urls         1971 non-null object
+rating_numerator      1971 non-null int64
+rating_denominator    1971 non-null int64
+name                  1971 non-null object
+doggo                 1971 non-null object
+floofer               1971 non-null object
+pupper                1971 non-null object
+puppo                 1971 non-null object
+new_rating            1971 non-null float64
+favorite_count        1971 non-null int64
+retweet_count         1971 non-null int64
+jpg_url               1971 non-null object
+img_num               1971 non-null int64
+p1                    1971 non-null object
+p1_conf               1971 non-null float64
+p1_dog                1971 non-null bool
+p2                    1971 non-null object
+p2_conf               1971 non-null float64
+p2_dog                1971 non-null bool
+p3                    1971 non-null object
+p3_conf               1971 non-null float64
+p3_dog                1971 non-null bool
+dtypes: bool(3), datetime64[ns](1), float64(4), int64(6), object(12)
+memory usage: 375.3+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[37]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">df_tweets_merged</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 1971 entries, 0 to 1970
+Data columns (total 26 columns):
+tweet_id              1971 non-null int64
+timestamp             1971 non-null datetime64[ns]
+source                1971 non-null object
+text                  1971 non-null object
+expanded_urls         1971 non-null object
+rating_numerator      1971 non-null int64
+rating_denominator    1971 non-null int64
+name                  1971 non-null object
+doggo                 1971 non-null object
+floofer               1971 non-null object
+pupper                1971 non-null object
+puppo                 1971 non-null object
+new_rating            1971 non-null float64
+favorite_count        1971 non-null int64
+retweet_count         1971 non-null int64
+jpg_url               1971 non-null object
+img_num               1971 non-null int64
+p1                    1971 non-null object
+p1_conf               1971 non-null float64
+p1_dog                1971 non-null bool
+p2                    1971 non-null object
+p2_conf               1971 non-null float64
+p2_dog                1971 non-null bool
+p3                    1971 non-null object
+p3_conf               1971 non-null float64
+p3_dog                1971 non-null bool
+dtypes: bool(3), datetime64[ns](1), float64(4), int64(6), object(12)
+memory usage: 375.3+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[38]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.3 - Strip &#39;source&#39; column to one variable, https://stackoverflow.com/questions/25900332/find-last-word-in-a-string-within-a-list-pandas-python-3</span>
+<span class="c1"># Define code, first get the devices into their own column</span>
+<span class="n">df_tweets_merged</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_tweets_merged</span><span class="p">[</span><span class="s1">&#39;source&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">.</span><span class="n">str</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[39]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.3 - Strip &#39;&lt;/a&gt;&#39; out of the new &#39;device&#39; column, https://stackoverflow.com/questions/28986489/how-to-replace-text-in-a-column-of-a-pandas-dataframe</span>
+<span class="n">df_tweets_merged</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_tweets_merged</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&lt;/a&gt;&#39;</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Check to see if code extracted device</span>
+<span class="n">df_tweets_merged</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[40]:</div>
+
+
+
+<div class="output_html rendered_html output_subarea output_execute_result">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>tweet_id</th>
+      <th>timestamp</th>
+      <th>source</th>
+      <th>text</th>
+      <th>expanded_urls</th>
+      <th>rating_numerator</th>
+      <th>rating_denominator</th>
+      <th>name</th>
+      <th>doggo</th>
+      <th>floofer</th>
+      <th>...</th>
+      <th>p1</th>
+      <th>p1_conf</th>
+      <th>p1_dog</th>
+      <th>p2</th>
+      <th>p2_conf</th>
+      <th>p2_dog</th>
+      <th>p3</th>
+      <th>p3_conf</th>
+      <th>p3_dog</th>
+      <th>device</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>892420643555336193</td>
+      <td>2017-08-01 16:23:56</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Phineas. He's a mystical boy. Only eve...</td>
+      <td>https://twitter.com/dog_rates/status/892420643...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Phineas</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>orange</td>
+      <td>0.097049</td>
+      <td>False</td>
+      <td>bagel</td>
+      <td>0.085851</td>
+      <td>False</td>
+      <td>banana</td>
+      <td>0.076110</td>
+      <td>False</td>
+      <td>iPhone</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>892177421306343426</td>
+      <td>2017-08-01 00:17:27</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Tilly. She's just checking pup on you....</td>
+      <td>https://twitter.com/dog_rates/status/892177421...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Tilly</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>Chihuahua</td>
+      <td>0.323581</td>
+      <td>True</td>
+      <td>Pekinese</td>
+      <td>0.090647</td>
+      <td>True</td>
+      <td>papillon</td>
+      <td>0.068957</td>
+      <td>True</td>
+      <td>iPhone</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>891815181378084864</td>
+      <td>2017-07-31 00:18:03</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Archie. He is a rare Norwegian Pouncin...</td>
+      <td>https://twitter.com/dog_rates/status/891815181...</td>
+      <td>12</td>
+      <td>10</td>
+      <td>Archie</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>Chihuahua</td>
+      <td>0.716012</td>
+      <td>True</td>
+      <td>malamute</td>
+      <td>0.078253</td>
+      <td>True</td>
+      <td>kelpie</td>
+      <td>0.031379</td>
+      <td>True</td>
+      <td>iPhone</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>891689557279858688</td>
+      <td>2017-07-30 15:58:51</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Darla. She commenced a snooze mid meal...</td>
+      <td>https://twitter.com/dog_rates/status/891689557...</td>
+      <td>13</td>
+      <td>10</td>
+      <td>Darla</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>paper_towel</td>
+      <td>0.170278</td>
+      <td>False</td>
+      <td>Labrador_retriever</td>
+      <td>0.168086</td>
+      <td>True</td>
+      <td>spatula</td>
+      <td>0.040836</td>
+      <td>False</td>
+      <td>iPhone</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>891327558926688256</td>
+      <td>2017-07-29 16:00:24</td>
+      <td>&lt;a href="http://twitter.com/download/iphone" r...</td>
+      <td>This is Franklin. He would like you to stop ca...</td>
+      <td>https://twitter.com/dog_rates/status/891327558...</td>
+      <td>12</td>
+      <td>10</td>
+      <td>Franklin</td>
+      <td>None</td>
+      <td>None</td>
+      <td>...</td>
+      <td>basset</td>
+      <td>0.555712</td>
+      <td>True</td>
+      <td>English_springer</td>
+      <td>0.225770</td>
+      <td>True</td>
+      <td>German_short-haired_pointer</td>
+      <td>0.175219</td>
+      <td>True</td>
+      <td>iPhone</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 27 columns</p>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 3.3 cont. - drop original source column</span>
+<span class="c1"># Define the code</span>
+<span class="n">new_df_tweets_merged</span> <span class="o">=</span> <span class="n">df_tweets_merged</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;source&#39;</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Test Code</span>
+
+<span class="n">new_df_tweets_merged</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+Int64Index: 1971 entries, 0 to 1970
+Data columns (total 26 columns):
+tweet_id              1971 non-null int64
+timestamp             1971 non-null datetime64[ns]
+text                  1971 non-null object
+expanded_urls         1971 non-null object
+rating_numerator      1971 non-null int64
+rating_denominator    1971 non-null int64
+name                  1971 non-null object
+doggo                 1971 non-null object
+floofer               1971 non-null object
+pupper                1971 non-null object
+puppo                 1971 non-null object
+new_rating            1971 non-null float64
+favorite_count        1971 non-null int64
+retweet_count         1971 non-null int64
+jpg_url               1971 non-null object
+img_num               1971 non-null int64
+p1                    1971 non-null object
+p1_conf               1971 non-null float64
+p1_dog                1971 non-null bool
+p2                    1971 non-null object
+p2_conf               1971 non-null float64
+p2_dog                1971 non-null bool
+p3                    1971 non-null object
+p3_conf               1971 non-null float64
+p3_dog                1971 non-null bool
+device                1971 non-null object
+dtypes: bool(3), datetime64[ns](1), float64(4), int64(6), object(12)
+memory usage: 375.3+ KB
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[43]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_tweets_df</span> <span class="o">=</span> <span class="n">new_df_tweets_merged</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 </pre></div>
 
     </div>
@@ -14711,10 +16122,11 @@ memory usage: 152.1+ KB
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[44]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Store, analyze and visualize </span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Store the file and download to os </span>
+<span class="n">all_tweets_df</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;twitter-archive-master.csv&#39;</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -14725,7 +16137,423 @@ memory usage: 152.1+ KB
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="-"> <a class="anchor-link" href="#-">&#182;</a></h1>
+<p>Analyze the data</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Investigate ratings using groupby</span>
+<span class="n">ratings_df</span> <span class="o">=</span> <span class="n">all_tweets_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;new_rating&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tweet_id</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">ratings_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[45]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>new_rating
+0.000000        1
+0.100000        4
+0.200000       10
+0.300000       19
+0.400000       15
+0.500000       34
+0.600000       32
+0.636364        1
+0.700000       51
+0.800000       95
+0.818182        1
+0.900000      150
+1.000000      419
+1.100000      397
+1.200000      450
+1.300000      253
+1.400000       33
+2.600000        1
+2.700000        1
+3.428571        1
+7.500000        1
+42.000000       1
+177.600000      1
+Name: tweet_id, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Here we can see that most ratings fall between 1.0 and 1.3.</span>
+<span class="c1"># Maybe we should consider exploring and removing the outliers? Are these mistakes?</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span> <span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="n">all_tweets_df</span><span class="p">[</span><span class="s1">&#39;new_rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;pie&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[46]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f864197beb8&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[56]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Create a DataFrame to explore the relationship between ratings and favorite count</span>
+<span class="n">most_ratings</span> <span class="o">=</span> <span class="n">all_tweets_df</span><span class="p">[</span><span class="n">all_tweets_df</span><span class="p">[</span><span class="s1">&#39;new_rating&#39;</span><span class="p">]</span><span class="o">&gt;</span> <span class="o">.</span><span class="mi">71</span><span class="p">]</span>
+<span class="n">most_ratings</span><span class="p">[</span><span class="s1">&#39;new_rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[56]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1804</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[59]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_ratings</span> <span class="o">=</span> <span class="n">all_tweets_df</span><span class="p">[</span><span class="s1">&#39;new_rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">all_ratings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[59]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>1971</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[60]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">most_ratings</span><span class="p">[</span><span class="s1">&#39;new_rating&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">/</span><span class="n">all_ratings</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[60]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0.91527143581938097</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[47]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#  # Investigate devices using groupby</span>
+<span class="n">device_df</span> <span class="o">=</span> <span class="n">all_tweets_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;device&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">tweet_id</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">device_df</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[47]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>device
+Client                        28
+iPhone                      1932
+rel=&#34;nofollow&#34;&gt;TweetDeck      11
+Name: tweet_id, dtype: int64</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[48]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># Chart for devices</span>
+<span class="n">all_tweets_df</span><span class="p">[</span><span class="s1">&#39;device&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">kind</span><span class="o">=</span><span class="s1">&#39;bar&#39;</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[48]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>&lt;matplotlib.axes._subplots.AxesSubplot at 0x7f863f859208&gt;</pre>
+</div>
+
+</div>
+
+<div class="output_area">
+
+    <div class="prompt"></div>
+
+
+
+
+<div class="output_png output_subarea ">
+<img src="data:image/png;base64,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
+"
+>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[62]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">all_tweets_df</span><span class="p">[</span><span class="s1">&#39;text&#39;</span><span class="p">]</span>
+</pre></div>
+
+    </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+    <div class="prompt output_prompt">Out[62]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>0       This is Phineas. He&#39;s a mystical boy. Only eve...
+1       This is Tilly. She&#39;s just checking pup on you....
+2       This is Archie. He is a rare Norwegian Pouncin...
+3       This is Darla. She commenced a snooze mid meal...
+4       This is Franklin. He would like you to stop ca...
+5       Here we have a majestic great white breaching ...
+6       Meet Jax. He enjoys ice cream so much he gets ...
+7       When you watch your owner call another dog a g...
+8       This is Zoey. She doesn&#39;t want to be one of th...
+9       This is Cassie. She is a college pup. Studying...
+10      This is Koda. He is a South Australian decksha...
+11      This is Bruno. He is a service shark. Only get...
+12      Here&#39;s a puppo that seems to be on the fence a...
+13      This is Ted. He does his best. Sometimes that&#39;...
+14      This is Stuart. He&#39;s sporting his favorite fan...
+15      This is Oliver. You&#39;re witnessing one of his m...
+16      This is Jim. He found a fren. Taught him how t...
+17      This is Zeke. He has a new stick. Very proud o...
+18      This is Ralphus. He&#39;s powering up. Attempting ...
+19      This is Gerald. He was just told he didn&#39;t get...
+20      This is Jeffrey. He has a monopoly on the pool...
+21      I&#39;ve yet to rate a Venezuelan Hover Wiener. Th...
+22      This is Canela. She attempted some fancy porch...
+23      You may not have known you needed to see this ...
+24      This... is a Jubilant Antarctic House Bear. We...
+25      This is Maya. She&#39;s very shy. Rarely leaves he...
+26      This is Mingus. He&#39;s a wonderful father to his...
+27      This is Derek. He&#39;s late for a dog meeting. 13...
+28      This is Roscoe. Another pupper fallen victim t...
+29      This is Waffles. His doggles are pupside down....
+                              ...                        
+1941    This is quite the dog. Gets really excited whe...
+1942    This is a southern Vesuvius bumblegruff. Can d...
+1943    Oh goodness. A super rare northeast Qdoba kang...
+1944    Those are sunglasses and a jean jacket. 11/10 ...
+1945    Unique dog here. Very small. Lives in containe...
+1946    Here we have a mixed Asiago from the Galápagos...
+1947    Look at this jokester thinking seat belt laws ...
+1948    This is an extremely rare horned Parthenon. No...
+1949    This is a funny dog. Weird toes. Won&#39;t come do...
+1950    This is an Albanian 3 1/2 legged  Episcopalian...
+1951       Can take selfies 11/10 https://t.co/ws2AMaNwPW
+1952    Very concerned about fellow dog trapped in com...
+1953    Not familiar with this breed. No tail (weird)....
+1954    Oh my. Here you are seeing an Adobe Setter giv...
+1955    Can stand on stump for what seems like a while...
+1956    This appears to be a Mongolian Presbyterian mi...
+1957    Here we have a well-established sunblockerspan...
+1958    Let&#39;s hope this flight isn&#39;t Malaysian (lol). ...
+1959    Here we have a northern speckled Rhododendron....
+1960    This is the happiest dog you will ever see. Ve...
+1961    Here is the Rand Paul of retrievers folks! He&#39;...
+1962    My oh my. This is a rare blond Canadian terrie...
+1963    Here is a Siberian heavily armored polar bear ...
+1964    This is an odd dog. Hard on the outside but lo...
+1965    This is a truly beautiful English Wilson Staff...
+1966    Here we have a 1949 1st generation vulpix. Enj...
+1967    This is a purebred Piers Morgan. Loves to Netf...
+1968    Here is a very happy pup. Big fan of well-main...
+1969    This is a western brown Mitsubishi terrier. Up...
+1970    Here we have a Japanese Irish Setter. Lost eye...
+Name: text, Length: 1971, dtype: object</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Report on the data findings</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>The analysis shows that most tweets came from an iphone, with a count total of 1,932.  There were twenty-eight devices classified as a "client" and eleven as "tweet deck".  I looked at devices because I was wondering if the size of the viewing screen impacted the ratings, but it doesn't appear there was enough variety in device types to have an impact on ratings.</p>
+<p>The bulk of the ratings, 91.52%, were above .71. I devided the numerator column by the denominator column, even though it had a unique structure where the numerators were larger than the denominators.  I would trim the rows with outlier ratings off of the rating data before using it in dog type comparisons.</p>
+<p>The data could be used to determine which types of dogs appeared to have higher ratings, or were higher ratings correlated with retweet_count or favorite_count.  Dog types could be compared to favorite_count, and then again to retweet_count.  Also, there is a lot of missing doogo, floofer, pupper and puppo data.  How could I fill this in?  Where could I get the missing data.</p>
+<p>Finally, you could see if dates, times or hashtags correlated with ratings, favorite_count, and retweet count.  The analysis could be used to determine the best time for WeRateDogs to tweet promotional tweets, in months, days, or times. What is #BarkWeek? When is #BarkWeek?  Is this prime promotion time for WeRateDogs?</p>
+
 </div>
 </div>
 </div>
@@ -14734,7 +16562,7 @@ memory usage: 152.1+ KB
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1">#Report on data findinds</span>
+<div class=" highlight hl-ipython3"><pre><span></span> 
 </pre></div>
 
     </div>
